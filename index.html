@@ -1,0 +1,312 @@
+<html>
+
+<head>
+    <title>The Forsaken Network</title>
+    <style>
+        html,
+        body {
+            background: rgb(18, 19, 22);
+            background: #25272C;
+            min-height: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        content {
+            position: relative;
+            max-width: 1080px;
+            width: 100%;
+            margin: 0 auto;
+            background: #25272C;
+            box-shadow: 0 0 100px 100px rgb(32, 34, 39);
+            min-height: 100vh;
+            padding: 0;
+            color: white;
+            display: block;
+        }
+
+        content header ul {
+            padding: 20px 0;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        content header ul li {
+            list-style-type: none;
+            margin: 0 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+
+        }
+
+        content header ul li.spacer {
+            content: " ";
+            display: block;
+            width: 45px;
+            border-bottom: 1px solid #fff;
+        }
+
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0px);
+            }
+            to {
+                transform: translateY(-5px);
+            }
+        }
+
+        @-webkit-keyframes bounce {
+            from {
+                transform: translateY(0px);
+            }
+            to {
+                transform: translateY(-5px);
+            }
+        }
+
+        h2 {
+            font-size: 48px;
+            line-height: 56px;
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            margin: 0 0 40px 0;
+            padding: 0;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 26px;
+            color: rgb(146, 147, 150);
+            margin: 25px 0;
+        }
+
+        ul {
+            padding: 0 0 0 20px;
+            margin: 0;
+        }
+
+        li {
+            font-size: 18px;
+            line-height: 26px;
+            color: rgb(146, 147, 150);
+        }
+
+        b {
+            color: #fff;
+        }
+
+        a {
+            display: inline-block;
+            position: relative;
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            animation: bounce 0.2s infinite alternate;
+            -webkit-animation: bounce 0.2s infinite alternate;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: inherit;
+            max-width: 1080px;
+            margin: 0 auto;
+            background: #7289da;
+            border-bottom: 1px solid rgb(31, 33, 37);
+        }
+
+        section {
+            padding: 60px 50px 0;
+        }
+
+        section:nth-of-type(3) {
+            padding-bottom: 0;
+        }
+
+        section:nth-of-type(1) {
+            padding-top: 120px;
+        }
+
+        .discordapp {
+            width: 100%;
+            min-height: 500px;
+        }
+
+        a.btn {
+            background: #7289da;
+            border-radius: 5px;
+            width: 150px;
+            font-size: 24px;
+            text-align: center;
+            color: #fff;
+            margin: 0 auto;
+            line-height: 24px;
+            padding: 10px 0;
+        }
+
+        section#join div.center {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .spacer {
+            content: " ";
+            border-bottom: 1px solid #ffffff;
+            width: 25%;
+        }
+
+        footer {
+            background: #7289da;
+            padding: 20px 50px;
+            margin-top: 50px;
+
+        }
+
+        .inline {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        .logo {
+            margin-right: 20px;
+            margin-bottom: 20px;
+            display: block;
+     float: left;
+        }
+
+        div p:first-of-type {
+            margin-top: 0;
+        }
+
+        div p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        body:before {
+            position: fixed;
+            display: block;
+            content: "";
+            top: -50vw;
+            left: 0;
+            width: 150vw;
+            height: 300vh;
+            background-image: url("data:image/png;base64,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");
+            background-repeat: repeat;
+            z-index: 1;
+            opacity: 0.04;
+            transform:rotate(-45deg);
+        }
+        content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <content>
+        <header>
+            <ul>
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li class="spacer"></li>
+                <li>
+                    <a href="#server">Server</a>
+                </li>
+                <li class="spacer"></li>
+                <li>
+                    <a href="#join">Discord Bot</a>
+                </li>
+            </ul>
+        </header>
+        <section id="about">
+            <div>
+                <h2>About</h2>
+                <div class="inline">
+                   
+                    <div> <img class="logo" src="data:image/png;base64,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"
+                        alt="The Forsaken Network" />
+                        <p>
+                            <b>The Forsaken Network</b> is a community of lovers and friends. We started way back in 2010, with
+                            just a few people in a big empty minecraft world, and quickly expanded due to our obvious
+                            <i>sex appeal
+                            </i> and
+                            <i>fuck it</i> attitude towards typical "moderating" styles.</p>
+                        <p>We play a bunch of different games together and we're super friendly, so don't feel shy and shout
+                            out because we want to hear from you, you absolutely beautiful person.</p>
+                        <p>Feel free to join our community, or if you just want the bot, you can find it below.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="server">
+            <div>
+                <iframe class="discordapp" src="https://discordapp.com/widget?id=222405818237190144&theme=dark" width="350" height="500"
+                    allowtransparency="true" frameborder="0"></iframe>
+            </div>
+        </section>
+        <section id="join">
+            <div>
+                <h2>Discord Bot</h2>
+                <p>We have our own dedicated discord bot that has a bunch of commands and actions that we couldn't find in other
+                    bots around, feel free to add it to your server or check out the
+                    <a target="_blank" href="https://github.com/ForsakenDev/ForsakenBot">source</a>.</p>
+                <p>
+                    <b>Some stuff we have:</b>
+                </p>
+                <ul>
+                    <li>Livestreaming notifications</li>
+                    <li>Custom channel creation</li>
+                    <li>Role reactions</li>
+                    <li>And much much more...</li>
+                </ul>
+                <div class="center">
+                    <div class="spacer"></div>
+                    <a class="btn" target="_blank" href="https://discordapp.com/api/oauth2/authorize?client_id=477305737505144853&permissions=8&scope=bot">Add Bot</a>
+                    <div class="spacer"></div>
+                </div>
+            </div>
+
+        </section>
+        <footer>
+            <div>
+                &copy; Copyright 2018
+            </div>
+        </footer>
+    </content>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("a").on('click', function (event) {
+
+                if (this.hash !== "") {
+                    event.preventDefault();
+
+                    var hash = this.hash;
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
